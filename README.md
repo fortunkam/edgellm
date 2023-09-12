@@ -48,11 +48,11 @@ conda activate edgellm
 ## Install cuda toolkit version that matches your GPU drivers
 # Full list at https://anaconda.org/nvidia/cuda-toolkit
 nvidia-smi #GPU Cuda version in top right
-conda install -c "nvidia/label/cuda-12.1.1" cuda-toolkit
+conda install -c "nvidia/label/cuda-12.2.0" cuda-toolkit
 
 ## Install python libraries
 # Ensure llama-cpp-python installs with cuBLAS support https://github.com/abetlen/llama-cpp-python#installation-with-openblas--cublas--clblast
-pip install langchain 
+conda install langchain 
 export LLAMA_CUBLAS=1
 CMAKE_ARGS="-DLLAMA_CUBLAS=on" FORCE_CMAKE=1 pip install llama-cpp-python --no-cache-dir
 

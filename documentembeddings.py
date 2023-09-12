@@ -6,12 +6,14 @@ from langchain.embeddings import OpenAIEmbeddings
 from langchain.embeddings import LlamaCppEmbeddings
 
 ### Cloud
-embeddings = OpenAIEmbeddings()
+# embeddings = OpenAIEmbeddings()
 
 ### Edge
 # embeddings = LlamaCppEmbeddings(model_path="./models/gpt4all-lora-quantized-new.bin")
 # embeddings = LlamaCppEmbeddings(model_path="./models/ggml-vicuna-7b-4bit-rev1.bin", n_threads=16)
 # embeddings = LlamaCppEmbeddings(model_path="./models/ggml-vicuna-13b-4bit-rev1.bin", n_threads=16)
+# embeddings = LlamaCppEmbeddings(model_path="./models/llama-2-7b.Q4_0.gguf", n_threads=4, n_gpu_layers=30)
+embeddings = LlamaCppEmbeddings(model_path="./models/falcon-7b-Q4_0-GGUF.gguf", n_threads=4, n_gpu_layers=30)
 
 # Load the document and split to fit in token context
 loader = TextLoader('data/satya-openai-announcement.txt')
